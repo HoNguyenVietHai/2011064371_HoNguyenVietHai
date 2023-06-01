@@ -3,7 +3,6 @@ package com.example.demo.Validator;
 import com.example.demo.entity.Category;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import jakarta.validation.Validator;
 import com.example.demo.Validator.annotation.ValidCategoryId;
 
 public class ValidCategoryIdValidator implements ConstraintValidator<ValidCategoryId, Category> {

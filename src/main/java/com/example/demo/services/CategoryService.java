@@ -13,11 +13,11 @@ import java.util.Optional;
 public class CategoryService {
     @Autowired
     private ICategoryRepository categoryRepository;
-    public List<Category> getAllCategories(){
+    public List<Category>getAllCategories(){
         return categoryRepository.findAll();
     }
-    public Category getCategoryById(Long id){
-        Optional<Category> optionalCategory = categoryRepository.findById(id);
+    public  Category getCategoryById(Long id){
+        Optional<Category>optionalCategory = categoryRepository.findById(id);
         if (optionalCategory.isPresent()){
             return optionalCategory.get();
         }else {
@@ -25,6 +25,13 @@ public class CategoryService {
         }
     }
 
+    public void addCategory(Category category){
+        categoryRepository.save(category);
+    }
+
+    public void updateCategory(Category category){
+        categoryRepository.save(category);
+    }
     public Category saveCategory(Category category){ return categoryRepository.save(category); }
     public void deleteCategory(Long id){ categoryRepository.deleteById(id); }
 }

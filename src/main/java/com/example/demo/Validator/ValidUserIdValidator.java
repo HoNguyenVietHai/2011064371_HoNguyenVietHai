@@ -1,4 +1,4 @@
-/*package com.example.demo.Validator;
+package com.example.demo.Validator;
 
 import com.example.demo.Validator.annotation.ValidUserId;
 import com.example.demo.entity.User;
@@ -15,23 +15,3 @@ public class ValidUserIdValidator implements ConstraintValidator<ValidUserId, Us
         return user.getId() != null;
     }
 }
-*/
-
-package com.example.demo.Validator;
-
-import com.example.demo.Validator.annotation.ValidUserId;
-import jakarta.validation.ConstraintValidator;
-import jakarta.validation.ConstraintValidatorContext;
-import org.apache.catalina.User;
-
-public class ValidUserIdValidator implements ConstraintValidator<ValidUserId, User> {
-
-    @Override
-    public boolean isValid(User user, ConstraintValidatorContext context){
-        if (user == null)
-            return true;
-        return user.getFullName() != null;
-    }
-
-}
-

@@ -29,4 +29,6 @@ public interface IUserRepository extends JpaRepository<User, Long> {
 
     @Query("SELECT r.name FROM User u JOIN u.roles r WHERE u.username = ?1")
     List<String> getAllRolesOfUser(String username);
+
+
 }
